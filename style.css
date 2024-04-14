@@ -1,0 +1,97 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  color: #ffffff;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #212121;
+}
+
+.container{
+  position: relative;
+}
+
+.clock{
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.currentYear{
+  /* display:flex; */
+  position: absolute;
+  display:flex;
+  justify-content: right;
+  width : 600px;
+}
+
+.clock span{
+  position: absolute;
+  transform: rotate(calc(30deg * var(--i))); 
+  inset: 12px;
+  text-align: center;
+}
+
+.clock span b{
+  transform: rotate(calc(-30deg * var(--i)));
+  display: inline-block;
+  font-size: 20px;
+}
+
+.clock::before{
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #fff;
+  z-index: 2;
+}
+.specialhand{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.specialhand i{
+  position : absolute;
+  /* background-color: #ffffff;  */
+  width: 4px;
+  height: 200px;
+  /* border: 1px dotted #ccc; 
+  opacity: 0.5;  */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    #ccc 2px,  /* Adjust color as needed */
+    #ccc 5px
+  );
+  opacity: 0.3;
+
+}
+.hand{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.hand i{
+  position: absolute;
+  background-color: var(--clr);
+  width: 4px;
+  height: var(--h);
+  border-radius: 8px;
+}
